@@ -1,0 +1,84 @@
+{
+  "total_value": 21.0,
+  "total_score": 35,
+  "distribution": [
+    {
+      "category": "Health",
+      "score": 4,
+      "projects": [
+        {
+          "name": "Cancer Institute",
+          "budget": 0.3
+        },
+        {
+          "name": "HIV Research Fund",
+          "budget": 0.4
+        }
+      ]
+    },
+    {
+      "category": "Environment",
+      "score": 8,
+      "projects": [
+        {
+          "name": "Change Climate",
+          "budget": 0
+        },
+        {
+          "name": "2eme essai",
+          "budget": 0
+        }
+      ]
+    },
+    {
+      "category": "Education",
+      "score": 0,
+      "projects": [
+        {
+          "name": "Second great Effort",
+          "budget": 0
+        }
+      ]
+    },
+    {
+      "category": "Energy",
+      "score": 0,
+      "projects": [
+        {
+          "name": "Nuclear Fusion Research Fund",
+          "budget": 0
+        }
+      ]
+    },
+    {
+      "category": "Wildlife",
+      "score": 0,
+      "projects": [
+        {
+          "name": "Wildlife Preserve",
+          "budget": 0
+        }
+      ]
+    },
+    {
+      "category": "Food",
+      "score": 0,
+      "projects": [
+        {
+          "name": "Food here",
+          "budget": 0
+        }
+      ]
+    },
+    {
+      "category": "Water",
+      "score": 0,
+      "projects": [
+        {
+          "name": "Water here",
+          "budget": 0
+        }
+      ]
+    }
+  ]
+}

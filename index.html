@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="globalFunds">
+<head>
+  <title>GlobalFunds</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <style>
+    body {
+      margin-top: 40px;
+    }
+    .btn-decrease {
+      color: #d9534f;
+    }
+    .err-msg {
+      background-color: rgba(255, 142, 142, 0.5);
+    }
+  </style>
+</head>
+<body ng-controller="MainCtrl as vm">
+  <div class="container">
+    <form name="investmentForm" ng-submit="vm.submitForm()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="list-group" ng-repeat="item in vm.distribution" ng-init="catIndex = $index">
+            <div class="list-group-item disabled">
+              {{ item.category }}
+              <span class="pull-right">Budget remaining: {{ vm.budgetRemaining(item) | currency:'$':1 }}</span>
+            </div>
+            <div class="list-group-item err-msg" ng-show="vm.budgetRemaining(item) < 0.0">
+              You have exceeded your budget.
+            </div>
+
+            <div class="list-group-item form-group" ng-repeat="project in item.projects">
+              <div class="row">
+                <label class="control-label col-sm-8">{{ project.name }}</label>
+                <div class="col-sm-4">
+                  <div class="input-group">
+                    <input type="number" class="form-control float-left" step="0.1" name="{{ project.name | slugify }}" ng-model="vm.mask[vm.getCatProjSlug(item.category, project.name)]">
+
+                    <span class="input-group-btn">
+                      <button class="btn btn-success" type="button" ng-click="vm.saveToCart(catIndex, $index, item.category, project.name)" ng-disabled="vm.saveDisabled(project.name)"><span class="glyphicon glyphicon-ok"></span></button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Global Funds<span class="pull-right">{{ vm.totalValue | currency:'$':1 }}|{{ vm.currentScore }}</span>
+            </div>
+            <div class="panel-body">
+              <table class="table">
+                <tbody>
+                  <tr ng-repeat="item in vm.distribution">
+                    <th scope="row">{{ item.category }}: {{ vm.scoreFactor * item.score | currency:'$':1 }}</th>
+                    <td>
+                      <button type="button" class="btn btn-xs btn-link" ng-click="vm.addScore($index, item.category)" ng-disabled="vm.currentScore == 0">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                      <span>{{ item.score }}</span>
+                      <button type="button" class="btn btn-xs btn-link btn-decrease" ng-click="vm.removeScore($index, item.category)" ng-disabled="item.score == 0">
+                        <span class="glyphicon glyphicon-minus"></span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              Total Amount: {{ vm.countAllDistributedBudget() | currency:'$':1 }}
+              <button type="submit" class="btn btn-primary pull-right" ng-disabled="investmentForm.$invalid || vm.budgetError()">Submit investment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+  <!-- <script src="js/array-methods.js"></script> -->
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/filters.js"></script>
+</body>
+</html>
