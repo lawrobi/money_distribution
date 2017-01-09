@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('globalFunds', ['angular.filter']);
+    .module('moneyDistribution', ['angular.filter']);
 
 }());

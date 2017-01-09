@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('globalFunds')
+    .module('moneyDistribution')
     .controller('MainCtrl', MainCtrl);
 
   MainCtrl.$inject = ['GlobalAPI', '$window', '$filter', '$scope'];

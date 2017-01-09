@@ -3,29 +3,29 @@
   "total_score": 35,
   "distribution": [
     {
-      "category": "Health",
+      "category": "Food",
       "score": 4,
       "projects": [
         {
-          "name": "Cancer Institute",
+          "name": "Fruits",
           "budget": 0.3
         },
         {
-          "name": "HIV Research Fund",
+          "name": "Vegetables",
           "budget": 0.4
         }
       ]
     },
     {
-      "category": "Environment",
+      "category": "Travel",
       "score": 8,
       "projects": [
         {
-          "name": "Change Climate",
+          "name": "Washingont D.C",
           "budget": 0
         },
         {
-          "name": "2eme essai",
+          "name": "San Francisco",
           "budget": 0
         }
       ]
@@ -35,47 +35,47 @@
       "score": 0,
       "projects": [
         {
-          "name": "Second great Effort",
+          "name": "Second year College",
           "budget": 0
         }
       ]
     },
     {
-      "category": "Energy",
+      "category": "Sports",
       "score": 0,
       "projects": [
         {
-          "name": "Nuclear Fusion Research Fund",
+          "name": "Basketball Game",
           "budget": 0
         }
       ]
     },
     {
-      "category": "Wildlife",
+      "category": "Electronics",
       "score": 0,
       "projects": [
         {
-          "name": "Wildlife Preserve",
+          "name": "New Iphone",
           "budget": 0
         }
       ]
     },
     {
-      "category": "Food",
+      "category": "Arts",
       "score": 0,
       "projects": [
         {
-          "name": "Food here",
+          "name": "Painting Class",
           "budget": 0
         }
       ]
     },
     {
-      "category": "Water",
+      "category": "Current life",
       "score": 0,
       "projects": [
         {
-          "name": "Water here",
+          "name": "Rent & Transportation",
           "budget": 0
         }
       ]

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('globalFunds')
+    .module('moneyDistribution')
     .factory('GlobalAPI', GlobalAPI);
 
   GlobalAPI.$inject = ['$http'];

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('globalFunds')
+    .module('moneyDistribution')
     .filter('slugify', SlugifyFilter);
 
   SlugifyFilter.$inject = [];
